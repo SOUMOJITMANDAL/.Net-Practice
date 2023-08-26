@@ -59,6 +59,8 @@ namespace ConsoleApp1
             Console.WriteLine($"Please enter your age {str} ");
             string str_age = Console.ReadLine();
             int age = Convert.ToInt32(str_age);
+
+            // Conditional statements
             if (age < 3)
             {
                 Console.WriteLine("Ride a toy car");
@@ -80,19 +82,72 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("You cannot Drive a vehicle. Try something else :) ");
             }
+
+            // switch case 
+            switch(age)
+            {
+                case 18:
+                    Console.WriteLine("You are now eligible to get your license to drive");
+                    break;
+
+                default:
+                    Console.WriteLine("Drive safely. ");
+                    break;
+
+            }
+
+            // Loops 
+            int i = 1;
+            while (i <= 10) // while loop 
+            {
+                Console.WriteLine(i); // Prints all natural numbers from 1 to 10.
+                i++; // increments by 1 
+            }
+
+            do   // do-while loop
+            {
+                Console.WriteLine("Will execute atleast once. here i's 1st value will be printed " + i);
+                i++;
+            } while (i < 2);
+
+            // for loop 
+            for(int j = 0; j < 10; j++) 
+            {
+                Console.WriteLine(j+1); // will print from 1 to 10 , but i will run from 0 to 9.
+            }
+            // break - break the loop forever 
+            // continue - break this loop for only once
+            float res = Average(2, 6, 7);
+            Console.WriteLine("The average of the 3 numbers = "+res);
+
+            // OOPs - object and classes
+
+            Player Ronnie = new Player();
+            Console.WriteLine(Ronnie.name);
+            //Console.WriteLine(Ronnie.health);
+            Ronnie.setHealth(87);
+            Console.WriteLine(Ronnie.getHealth());
+
             Console.ReadLine();
         }
-        public static int func1(int a, int b)
+        public static int func1(int a, int b) // Method 1
         {
             int sum = 0;
             sum = a + b;
             return sum;
         }
-        public static String userinput()
+        public static String userinput()  // method 2 
         {
             Console.WriteLine("Enter your name :");
             String name = Console.ReadLine();
             return name;
         }
+        public static float Average(int a , int b, int c)
+        {
+            //int sum = 0;
+            //sum = a + b + c;
+            //float avg = sum / 3;
+            return (a+b+c)/3;
+        } 
     }
 }
